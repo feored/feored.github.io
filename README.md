@@ -1,2 +1,1 @@
-# feored.github.io
-web sight
+Repository for my blog, using [Zola](https://github.com/getzola/zola).
