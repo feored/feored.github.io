@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--(´・ω・`)-->
+
+<head>
+	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+	<meta charset="utf-8">
+	<title>{% if page.title %}{{ page.title }} :: {% endif %}{{ config.title }}</title>
+</head>
+
+
+<body>
+	{% block header %}
+	<header>
+		{% if config.extra.links or linked_pages %}
+		<menu>
+			{% for link in config.extra.links %}
+			<li><a href="{{ link.href }}">{{ link.title }}</a></li>
+			{% endfor %}
+		</menu>
+		{% endif %}
+	</header>
+	{% endblock header %}
+	<main>
+		{% block content %}
+
+		{% endblock content %}
+	</main>
+</body>
+
+</html>

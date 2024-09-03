@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Archive</h3>
+{% for page in section.pages %}
+<section>
+	<small>{{ page.date }}</small>
+	<p> <a href="{{ page.permalink | safe }}">{{ page.title }}</a></p>
+</section>
+{% endfor %}
+{% endblock content %}
