@@ -15,8 +15,8 @@ build_search_index = false
 highlight_code = true
 
 [extra]
-# Put all your custom variables here
 links = [
 	{ title = "blog", href = "/" },
+	{ title = "runewords", href = "https://feored.github.io/runeword-explorer" },
 	{ title = "github", href = "https://github.com/feored" },
-]
+] # Put all your custom variables here
