@@ -18,5 +18,6 @@ highlight_code = true
 links = [
 	{ title = "blog", href = "/" },
 	{ title = "runewords", href = "https://feored.github.io/runeword-explorer" },
+ 	{ title = "tmformat", href = "https://feored.github.io/tmformat"},
 	{ title = "github", href = "https://github.com/feored" },
 ] # Put all your custom variables here
