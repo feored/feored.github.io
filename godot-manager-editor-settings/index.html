@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--(´・ω・`)-->
+
+<head>
+	<link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+	<meta charset="utf-8">
+	<title>Importing Editor Settings in a new version of Godot with Godot Manager :: feored.github.io</title>
+</head>
+
+
+<body>
+	
+	<header>
+		
+		<menu>
+			
+			<li><a href="&#x2F;">blog</a></li>
+			
+			<li><a href="https:&#x2F;&#x2F;feored.github.io&#x2F;runeword-explorer">runewords</a></li>
+			
+			<li><a href="https:&#x2F;&#x2F;feored.github.io&#x2F;tmformat">tmformat</a></li>
+			
+			<li><a href="https:&#x2F;&#x2F;github.com&#x2F;feored">github</a></li>
+			
+		</menu>
+		
+	</header>
+	
+	<main>
+		
+<h3 class="title">
+	Importing Editor Settings in a new version of Godot with Godot Manager
+</h3>
+<p class="subtitle"><strong>2024-09-03</strong></p>
+<p>I use <a href="https://github.com/eumario/godot-manager">Godot Manager</a> to manage which versions of Godot are installed on my system, it's a very useful tool when you have multiple projects going on at the same time using different versions of Godot.</p>
+<p>I've recently updated to Godot 4.3, but my editor settings were not ported over. There is an option to link settings in Godot Manager, but for whatever reason it seems not to be working properly on my machine. Thankfully, porting settings manually is very easy.</p>
+<p>All there is to know is that Godot Manager installs versions of Godot in <a href="https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html#self-contained-mode">self-contained mode</a>, which stores all settings in the same folder where the binary for the editor is found.</p>
+<p>Just hop over to wherever Godot Manager stores Godot versions on your machine (<code>%APPDATA%/Godot-Manager/versions/</code> on Windows), and you can copy and paste the relevant editor_data folder to the version you just installed.</p>
+<p>Not a very ambitious first blog entry, but hopefully that saved you a few minutes of googling.</p>
+
+
+	</main>
+</body>
+
+</html>
