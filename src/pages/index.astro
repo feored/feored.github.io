@@ -1,92 +1,331 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const sections = [
+	{
+		title: "Diablo II",
+		items: [
+			{
+				title: "Halbu Editor",
+				highlight: true,
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/halbu-editor",
+					},
+					{
+						label: "Releases",
+						href: "https://github.com/feored/halbu-editor/releases",
+					},
+				],
+				description:
+					"Diablo II: Resurrected save editor with validation, backups, and templates, built for safe editing of binary .d2s files across versions, including recovery from malformed saves.",
+				tech: "Tauri, Svelte, TypeScript, Rust",
+			},
+			{
+				title: "Halbu",
+				highlight: true,
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/halbu",
+					},
+					{
+						label: "crates.io",
+						href: "https://crates.io/crates/halbu",
+					},
+				],
+				description:
+					"Rust library for parsing, editing, validating, and safely re-encoding D2R .d2s save files, with strict and tolerant parsing modes and preservation of unknown data for round-trip safety.",
+				tech: "Rust",
+			},
+			{
+				title: "Runeword Explorer",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/runeword-explorer",
+					},
+					{
+						label: "Live demo",
+						href: "https://feored.github.io/runeword-explorer",
+					},
+				],
+				description:
+					"Diablo II runeword calculator with cubing support, .d2s/.d2i import and many filters and sorting options.",
+				tech: "SvelteKit, TypeScript",
+			},
+			{
+				title: "D2R Map Seed Tool",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/d2mapseed",
+					},
+				],
+				description:
+					"Command-line tool to read or write Diablo II: Resurrected map seeds and repair save checksums and file-size headers.",
+				tech: "Python",
+			},
+		],
+	},
+	{
+		title: "Trackmania",
+		items: [
+			{
+				title: "Trackmania Formatting Tool",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/tmformat",
+					},
+					{
+						label: "Live demo",
+						href: "https://feored.github.io/tmformat/",
+					},
+				],
+				description:
+					"Web toolbox for formatting Trackmania text with custom parsing.",
+				tech: "SvelteKit, TypeScript",
+			},
+			{
+				title: "Autoblock",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/autoblock",
+					},
+				],
+				description:
+					"Desktop tool for batch-swapping materials and physics layers on Trackmania 2 custom block (.Gbx) files.",
+				tech: "C#, .NET, GBX.NET",
+			},
+			{
+				title: "Blockdraw",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/blockdraw",
+					},
+				],
+				description:
+					"Desktop tool to draw pixel art directly in Trackmania 2 maps using custom blocks.",
+				tech: "C#, .NET, Svelte, Photino, GBX.NET",
+			},
+			{
+				title: "PyPlanet AFK Plugin",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/pyplanet-afk_spec",
+					},
+					{
+						label: "PyPI",
+						href: "https://pypi.org/project/pyplanet-afk-spec/",
+					},
+				],
+				description:
+					"Configurable PyPlanet plugin that detects inactive players and moves them to spectator mode.",
+				tech: "Python, PyPlanet",
+			},
+		],
+	},
+	{
+		title: "Misc",
+		items: [
+			{
+				title: "Soundpost Tools",
+				links: [
+					{
+						label: "Live demo",
+						href: "https://feored.github.io/soundpost-tools",
+					},
+				],
+				description:
+					"Browser-based utilities for processing soundpost-style WebM files entirely on the client using ffmpeg.wasm.",
+				tech: "SvelteKit, TypeScript, ffmpeg.wasm",
+			},
+			{
+				title: "Lightweight Screenshot",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/screenshotext",
+					},
+					{
+						label: "Chrome Web Store",
+						href: "https://chromewebstore.google.com/detail/lightweight-screenshot/eapeifgbfommamnclhbppicejicnpooc",
+					},
+				],
+				description:
+					"Chrome extension for capturing full-page and region screenshots with minimal overhead.",
+				tech: "Javascript",
+			},
+		],
+	},
+	{
+		title: "Games",
+		items: [
+			{
+				title: "Neptune's Wake",
+				highlight: true,
+				links: [
+					{
+						label: "itch.io",
+						href: "https://feor.itch.io/neptunes-wake",
+					},
+					{
+						label: "LDjam",
+						href: "https://ldjam.com/events/ludum-dare/54/neptunes-wake",
+					},
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/NeptunesWake",
+					},
+				],
+				description:
+					"Strategy deckbuilder based on Dice Wars with data-driven cards, procedural generation and AI opponents using heuristic evaluations and lookahead. Originally built for Ludum Dare 54.",
+				tech: "Godot",
+			},
+			{
+				title: "The Lair of Kolekto",
+				links: [
+					{
+						label: "itch.io",
+						href: "https://feor.itch.io/the-lair-of-kolekto",
+					},
+					{
+						label: "LDjam",
+						href: "https://ldjam.com/events/ludum-dare/58/the-lair-of-kolekto",
+					},
+				],
+				description:
+					"Wave-survival arena game with diablo-style items, built for Ludum Dare 58.",
+				tech: "Godot",
+			},
+			{
+				title: "Carvest",
+				links: [
+					{
+						label: "itch.io",
+						href: "https://feor.itch.io/carvest",
+					},
+					{
+						label: "LDjam",
+						href: "https://ldjam.com/events/ludum-dare/52/carvset",
+					},
+				],
+				description:
+					"Top-down game about placing traps to cause mayhem on the road, built for Ludum Dare 52.",
+				tech: "Godot",
+			},
+			{
+				title: "Deep Impact",
+				links: [
+					{
+						label: "itch.io",
+						href: "https://feor.itch.io/deep-impact",
+					},
+					{
+						label: "LDjam",
+						href: "https://ldjam.com/events/ludum-dare/57/d-e-e-p-impact",
+					},
+				],
+				description:
+					"Arcade game based on 1977's Depthcharge, built for Ludum Dare 57.",
+				tech: "Godot",
+			},
+			{
+				title: "Tales of Sea City",
+				links: [
+					{
+						label: "itch.io",
+						href: "https://feor.itch.io/tales-of-sea-city",
+					},
+				],
+				description: "Adventure game based on Gikopoi.",
+				tech: "Godot",
+			},
+			{
+				title: "Giko Idol",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/gikoidol",
+					},
+				],
+				description: "Multiplayer minigame using the Gikobox backend.",
+				tech: "Unity",
+			},
+			{
+				title: "Gikobox",
+				links: [
+					{
+						label: "GitHub",
+						href: "https://github.com/feored/gikobox",
+					},
+				],
+				description:
+					"Jackbox-style backend for room-based party games with real-time messaging.",
+				tech: "Node.js, Redis, WebSockets",
+			},
+		],
+	},
+];
 ---
 
 <Layout>
-    <main>
-        <article>
-            <header>
-                <h3>feor's homepage</h3>
-            </header>
-            <p>Tools on this website</p>
-            <ul>
-                <li>
-                    <a href="https://feored.github.io/runeword-explorer"
-                        >D2R Runeword Explorer</a
-                    >
-                </li>
-                <li>
-                    <a href="https://feored.github.io/tmformat/"
-                        >Trackmania Formatting Tool</a
-                    >
-                </li>
-                <li>
-                    <a href="https://feored.github.io/soundpost-tools"
-                        >Soundpost Tools</a
-                    >
-                </li>
-            </ul>
-            <p>Other projects</p>
-            <ul>
-                <li>
-                    <a href="https://github.com/feored/halbu-editor"
-                        >D2R Halbu Editor
-                    </a>(stalled)
-                </li>
-                <li>
-                    <a href="https://github.com/feored/d2mapseed">
-                        D2R Map Seed Tool</a
-                    >
-                </li>
-                <li>
-                    <a href="https://github.com/feored/autoblock">
-                        Trackmania 2 Custom Block Generator</a
-                    >
-                </li>
-                <li>
-                    <a href="https://github.com/feored/blockdraw">
-                        Trackmania 2 Pixel Art</a
-                    >
-                </li>
-                <li>
-                    <a href="https://pypi.org/project/pyplanet-afk-spec/"
-                        >Trackmania PyPlanet AFK Plugin (PyPI)</a
-                    >
-                </li>
-            </ul>
-            <p>Games</p>
-            <ul>
-                <li>
-                    <a href="https://feor.itch.io/carvest">Carvest</a> - Ludum Dare
-                    52
-                </li>
-                <li>
-                    <a href="https://feor.itch.io/neptunes-wake"
-                        >Neptune's Wake</a
-                    > - Ludum Dare 54
-                </li>
-                <li>
-                    <a href="https://feor.itch.io/deep-impact">Deep Impact</a> -
-                    Ludum Dare 57
-                </li>
-                <li>
-                    <a href="https://feor.itch.io/the-lair-of-kolekto"
-                        >The Lair of Kolekto</a
-                    > - Ludum Dare 58
-                </li>
-                <li>
-                    <a href="https://feor.itch.io/tales-of-sea-city"
-                        >Tales of Sea City</a
-                    > (stalled)
-                </li>
-                <li>
-                    <a href="https://github.com/feored/gikoidol">Giko Idol</a> +
-                    <a href="https://github.com/feored/gikobox">Gikobox</a> (stalled)
-                </li>
-            </ul>
-            <footer>
-                <small>(´・ω・`)</small>
-            </footer>
-        </article>
-    </main>
+	<main>
+		<header>
+			<p class="entry-links page-links">
+				<a href="https://github.com/feored">github.com/feored</a>
+			</p>
+		</header>
+		{
+			sections.map((section) => (
+				<section>
+					<h2>{section.title}</h2>
+					<ul class="entry-list">
+						{section.items.map((item) => (
+							<li
+								class:list={[
+									"entry",
+									item.highlight && "entry--highlight",
+								]}
+							>
+								<div class="entry-heading">
+									<h3>{item.title}</h3>
+									<p class="entry-links">
+										{item.links.map((link, index) => (
+											<>
+												{index > 0 && (
+													<span class="entry-links-separator">
+														{" "}
+														-{" "}
+													</span>
+												)}
+												<a href={link.href}>
+													{link.label}
+												</a>
+											</>
+										))}
+									</p>
+								</div>
+								<div class="entry-body">
+									<p class="entry-description">
+										{item.description}
+									</p>
+									<p class="entry-tech">{item.tech}</p>
+								</div>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+
+		<footer>
+			<small>(&#180;&#12539;&#969;&#12539;&#96;)</small>
+		</footer>
+	</main>
 </Layout>

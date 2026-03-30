@@ -1,0 +1,152 @@
+:root {
+  --background: #141311;
+  --border: #3f392f;
+  --highlight: #221d18;
+  --highlight-accent: #5a4f40;
+  --text: #eadcc0;
+  --muted: #b7a88b;
+  --faint: #8f816b;
+  --soft: #d8c9ad;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.14em;
+}
+
+main {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0.72rem 0.8rem 1rem;
+}
+
+section + section {
+  margin-top: 0.9rem;
+}
+
+h2 {
+  margin: 0 0 0.22rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+small {
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 0.9rem;
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--border);
+}
+
+.entry {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.34rem 0 0.38rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry--highlight {
+  margin: 0 -0.45rem;
+  padding-left: calc(0.45rem - 1px);
+  padding-right: 0.45rem;
+  background: var(--highlight);
+  border-left: 3px solid var(--highlight-accent);
+}
+
+.entry-heading h3 {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--soft);
+}
+
+.entry-heading a {
+  text-decoration: none;
+}
+
+.entry-heading a:hover,
+.entry-heading a:focus {
+  text-decoration: underline;
+}
+
+.entry-links {
+  margin: 0.1rem 0 0;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.page-links {
+  margin: 0 0 0.7rem;
+}
+
+.entry-links a {
+  color: var(--soft);
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.12em;
+}
+
+.entry-links a:hover,
+.entry-links a:focus {
+  color: var(--text);
+  text-decoration-color: var(--soft);
+}
+
+.entry-links-separator {
+  color: var(--faint);
+}
+
+.entry-description {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--soft);
+}
+
+.entry-tech {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: var(--faint);
+}
+
+.entry-body {
+  display: grid;
+  gap: 0.04rem;
+}
+
+@media (min-width: 48rem) {
+  .entry {
+    grid-template-columns: minmax(10rem, 12.5rem) minmax(0, 1fr);
+    column-gap: 0.65rem;
+    align-items: start;
+  }
+
+  .entry-description {
+    margin: 0;
+  }
+
+  .entry-tech {
+    margin: 0;
+  }
+}
